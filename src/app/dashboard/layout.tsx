@@ -28,11 +28,9 @@ export default function DashboardLayout({
           <SidebarNav />
         </SidebarContent>
       </Sidebar>
-      <SidebarInset>
-        <main className="flex-1">
+      <main className="flex-1">
           <div className="p-4 sm:p-6 md:p-8">{children}</div>
-        </main>
-      </SidebarInset>
+      </main>
     </div>
   );
 }
