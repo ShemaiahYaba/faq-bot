@@ -22,7 +22,7 @@ export default function DashboardLayout({
             <div className="flex items-center gap-2">
               <Bot className="w-8 h-8 text-primary" />
               <h1 className="text-xl font-semibold font-headline text-primary">
-                DocuChat
+                FAQ Bot
               </h1>
             </div>
           </SidebarHeader>

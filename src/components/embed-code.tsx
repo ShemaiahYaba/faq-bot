@@ -13,7 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 
 export function EmbedCode() {
   const { toast } = useToast();
-  const embedCode = `<script src="https://your-domain.com/docuchat-embed.js" data-bot-id="YOUR_BOT_ID" async defer></script>`;
+  const embedCode = `<script src="https://your-domain.com/faq-bot-embed.js" data-bot-id="YOUR_BOT_ID" async defer></script>`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(embedCode);

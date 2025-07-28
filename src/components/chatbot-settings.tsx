@@ -49,7 +49,7 @@ export function ChatbotSettings({ setGeneratedPersona }: ChatbotSettingsProps) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-        name: 'My DocuChat Bot',
+        name: 'My FAQ Bot',
         persona: "You are a helpful assistant. Your goal is to answer user questions based on the documents provided. Be friendly and professional. If you don't know the answer, say so.",
         fallback: "I'm sorry, I don't have the information to answer that question. Please try asking in a different way."
     },

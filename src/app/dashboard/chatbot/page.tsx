@@ -9,7 +9,7 @@ import { Separator } from '@/components/ui/separator';
 
 export default function ChatbotPage() {
   const [generatedPersona, setGeneratedPersona] = useState<string | null>(
-    "I am a friendly and helpful assistant for DocuChat. I'm here to answer questions based on the provided documents."
+    "I am a friendly and helpful assistant for FAQ Bot. I'm here to answer questions based on the provided documents."
   );
 
   return (
