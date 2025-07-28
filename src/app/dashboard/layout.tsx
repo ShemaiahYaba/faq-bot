@@ -30,9 +30,9 @@ export default function DashboardLayout({
             <SidebarNav />
           </SidebarContent>
         </Sidebar>
-        <SidebarInset>
-          <div className="flex-1 p-4 sm:p-6 md:p-8">{children}</div>
-        </SidebarInset>
+        <main className="flex-1">
+          <div className="p-4 sm:p-6 md:p-8">{children}</div>
+        </main>
       </div>
     </SidebarProvider>
   );
