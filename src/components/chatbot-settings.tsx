@@ -143,7 +143,7 @@ export function ChatbotSettings({ setGeneratedPersona, setPersona }: ChatbotSett
           <CardFooter className="justify-start">
             <Button type="submit" disabled={loading}>
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              {loading ? 'Generating...' : 'Update Chatbot'}
+              {loading ? 'Saving...' : 'Save Changes'}
             </Button>
           </CardFooter>
         </form>
