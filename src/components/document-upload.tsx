@@ -58,7 +58,7 @@ export function DocumentUpload({ onFileUpload }: DocumentUploadProps) {
     <Card>
       <CardContent
         className={cn(
-          'p-6 border-2 border-dashed rounded-lg transition-colors duration-200',
+          'p-10 border-2 border-dashed rounded-lg transition-colors duration-200',
           isDragOver ? 'border-primary bg-primary/5' : 'border-border'
         )}
         onDragEnter={handleDragEnter}

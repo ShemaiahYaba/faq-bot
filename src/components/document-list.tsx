@@ -30,6 +30,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import { formatDistanceToNow } from 'date-fns';
 
 
 interface DocumentListProps {
@@ -43,27 +44,18 @@ export function DocumentList({ documents, onDelete }: DocumentListProps) {
   const getStatusVariant = (status: Document['status']) => {
     switch (status) {
       case 'Trained':
-        return 'default';
+        return 'success' as const;
       case 'Pending':
-        return 'secondary';
+        return 'warning' as const;
       case 'Error':
-        return 'destructive';
+        return 'destructive' as const;
       default:
-        return 'outline';
+        return 'outline' as const;
     }
   };
 
   const formatRelativeTime = (date: Date) => {
-    const now = new Date();
-    const seconds = Math.round((now.getTime() - date.getTime()) / 1000);
-    const minutes = Math.round(seconds / 60);
-    const hours = Math.round(minutes / 60);
-    const days = Math.round(hours / 24);
-
-    if (seconds < 60) return `${seconds}s ago`;
-    if (minutes < 60) return `${minutes}m ago`;
-    if (hours < 24) return `${hours}h ago`;
-    return `${days}d ago`;
+    return formatDistanceToNow(date, { addSuffix: true });
   };
   
   return (
