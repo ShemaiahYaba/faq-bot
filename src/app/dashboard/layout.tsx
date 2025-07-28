@@ -14,7 +14,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen bg-background">
+    <>
       <Sidebar collapsible="icon" className="border-r">
         <SidebarHeader className="p-4">
           <div className="flex items-center gap-2">
@@ -29,10 +29,10 @@ export default function DashboardLayout({
         </SidebarContent>
       </Sidebar>
       <SidebarInset>
-        <main className="p-4 sm:p-6 md:p-8">
+        <main className="flex-1 p-4 sm:p-6 md:p-8">
           {children}
         </main>
       </SidebarInset>
-    </div>
+    </>
   );
 }
