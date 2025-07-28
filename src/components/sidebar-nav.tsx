@@ -30,19 +30,20 @@ export function SidebarNav() {
     <SidebarMenu>
       {navItems.map((item) => (
         <SidebarMenuItem key={item.href}>
-          <Link href={item.href} passHref legacyBehavior>
-            <SidebarMenuButton
-              isActive={pathname === item.href}
-              className={cn(
-                'w-full justify-start',
-                pathname === item.href &&
-                  'bg-primary/10 text-primary hover:bg-primary/20'
-              )}
-            >
+          <SidebarMenuButton
+            asChild
+            isActive={pathname === item.href}
+            className={cn(
+              'w-full justify-start',
+              pathname === item.href &&
+                'bg-primary/10 text-primary hover:bg-primary/20'
+            )}
+          >
+            <Link href={item.href}>
               <item.icon className="w-5 h-5" />
               <span>{item.label}</span>
-            </SidebarMenuButton>
-          </Link>
+            </Link>
+          </SidebarMenuButton>
         </SidebarMenuItem>
       ))}
     </SidebarMenu>
