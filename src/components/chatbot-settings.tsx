@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -40,9 +40,10 @@ const formSchema = z.object({
 
 interface ChatbotSettingsProps {
   setGeneratedPersona: (persona: string | null) => void;
+  setPersona: (persona: string) => void;
 }
 
-export function ChatbotSettings({ setGeneratedPersona }: ChatbotSettingsProps) {
+export function ChatbotSettings({ setGeneratedPersona, setPersona }: ChatbotSettingsProps) {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
@@ -55,11 +56,18 @@ export function ChatbotSettings({ setGeneratedPersona }: ChatbotSettingsProps) {
     },
   });
 
+  const personaValue = form.watch('persona');
+  useEffect(() => {
+    setPersona(personaValue);
+  }, [personaValue, setPersona]);
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
     try {
       const result = await generateChatbot({ prompt: values.persona });
-      setGeneratedPersona(result.chatbotPersona);
+      // This is now used for the API call result, not the live preview
+      setGeneratedPersona(result.chatbotPersona); 
+      setPersona(values.persona); // Ensure live preview is also updated on submit
       toast({
         title: 'Chatbot Updated!',
         description: 'Your chatbot is now using the new persona.',
@@ -132,7 +140,7 @@ export function ChatbotSettings({ setGeneratedPersona }: ChatbotSettingsProps) {
                 )}
             />
           </CardContent>
-          <CardFooter>
+          <CardFooter className="justify-start">
             <Button type="submit" disabled={loading}>
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               {loading ? 'Generating...' : 'Update Chatbot'}

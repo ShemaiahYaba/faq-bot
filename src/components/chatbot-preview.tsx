@@ -116,7 +116,7 @@ export function ChatbotPreview({ generatedPersona }: ChatbotPreviewProps) {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-            placeholder="Ask your chatbot a question..."
+            placeholder="Type your question here..."
           />
           <Button onClick={handleSendMessage}>
             <Send className="w-4 h-4" />
