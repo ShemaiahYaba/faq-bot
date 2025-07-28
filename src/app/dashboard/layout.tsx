@@ -3,6 +3,7 @@ import {
   Sidebar,
   SidebarHeader,
   SidebarContent,
+  SidebarInset,
 } from '@/components/ui/sidebar';
 import { Bot } from 'lucide-react';
 import { SidebarNav } from '@/components/sidebar-nav';
@@ -27,11 +28,11 @@ export default function DashboardLayout({
           <SidebarNav />
         </SidebarContent>
       </Sidebar>
-      <div className="flex flex-col flex-1">
+      <SidebarInset>
         <main className="flex-1 p-4 sm:p-6 md:p-8">
           {children}
         </main>
-      </div>
+      </SidebarInset>
     </div>
   );
 }
