@@ -4,8 +4,6 @@ import { useState } from 'react';
 import { DashboardHeader } from '@/components/dashboard-header';
 import { ChatbotSettings } from '@/components/chatbot-settings';
 import { ChatbotPreview } from '@/components/chatbot-preview';
-import { EmbedCode } from '@/components/embed-code';
-import { Separator } from '@/components/ui/separator';
 
 export default function ChatbotPage() {
   const [generatedPersona, setGeneratedPersona] = useState<string | null>(
@@ -24,7 +22,6 @@ export default function ChatbotPage() {
         </div>
         <div className="space-y-8">
           <ChatbotPreview generatedPersona={generatedPersona} />
-          <EmbedCode />
         </div>
       </div>
     </div>

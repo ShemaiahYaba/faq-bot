@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Bot, FileText } from 'lucide-react';
+import { Bot, FileText, Code } from 'lucide-react';
 import {
   SidebarMenu,
   SidebarMenuItem,
@@ -23,6 +23,11 @@ export function SidebarNav() {
       href: '/dashboard/chatbot',
       label: 'Chatbot Settings',
       icon: Bot,
+    },
+    {
+      href: '/dashboard/embed',
+      label: 'Embed',
+      icon: Code,
     },
   ];
 
